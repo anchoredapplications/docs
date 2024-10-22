@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/partials/Layout.astro';
+import Heading from '../layouts/partials/Heading.astro';
+import Footer from '../layouts/partials/Footer.astro';
+import Content from '../layouts/partials/Content.astro';
+const { title, description, image } = Astro.props;
+const heading = title.toUpperCase().split("").join(" ")
+---
+<Layout title={title}>
+    <main>
+        <Heading 
+            title={heading} 
+            description={description}
+            image={image}>
+            <slot name="header"/> 
+        </Heading>
+        <Content>
+            <slot name="content"/> 
+        </Content>
+    </main>
+    <Footer />
+</Layout>
+
+<style is:global>
+    footer {
+        height: 48px;
+    }
+    main {
+        min-height: calc(100vh - 48px);
+    }
+</style>

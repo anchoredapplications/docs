@@ -1,0 +1,38 @@
+---
+const { title, description, image } = Astro.props;
+---
+
+<div class="header">
+    <img src={image} alt={title + ' logo'} class="logo" />
+    <h1>{title}</h1>
+    <h2>{description}</h2>
+	<slot />
+	<hr class="divider"/>
+</div>
+  
+<style>
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding-top: 8rem;
+	}
+
+	.divider {
+		color: rgb(92, 92, 92);
+		width: 50vw;
+	}
+
+	.logo {
+		width: 8rem;
+		height: 8rem;
+		margin-bottom: 0rem;
+	}
+
+	h2 {
+		font-size: 1.25rem;
+		margin-top: 0rem;
+		color: rgb(154, 154, 154);
+	}
+</style>

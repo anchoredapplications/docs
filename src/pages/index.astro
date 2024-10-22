@@ -1,106 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
-import BadgeRow from '../components/BadgeRow.astro';
+import IntroDoc from '../layouts/IntroDoc.astro';
+import NavCard from '../components/NavCard.astro'; // Assuming you have a reusable Card component
 ---
 
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
-<Layout title="MatchBot Docs">
-  <div class="header">
-    <img src="./matchbot.svg" alt="MatchBot Logo" class="logo" />
-    <BadgeRow>
-      <Badge heading="50k+" subheading="uses"/>
-      <Badge heading="1k+" subheading="users"/>
-      <Badge heading="2+" subheading="servers"/>
-    </BadgeRow>
-    <h1>M A T C H  B O T</h1>
-    <p>The matchmaking bot for Discord</p>
+<IntroDoc
+  title="Home" 
+  description="Select an application to read the related documentation." 
+  image="./docs.svg"
+>
+  <div slot="content" class="container">
+    <div class="card-grid">
+      <NavCard title="MatchBot" description="The matchmaking bot for Discord" link="/matchbot" image="/matchbot.svg"/>
+    </div>
   </div>
-  
-  <Card heading="Early Access" subheading="MatchBot is currently in early access, and is available only upon request. We're actively working to improve the bot and add new features. We appreciate your feedback and support as we continue to develop and enhance the experience."/>
-  
-  <div class="content">
-    <h2>About MatchBot</h2>
-    <p>
-      MatchBot is a Discord bot built using TypeScript and Discord.js, designed to bring the dating app experience to Discord servers.
-      It's fully dockerized for easy deployment and scaling.
-    </p>
-    <p>
-      The bot offers a variety of features including general member commands, event commands for server management, and its core matchmaking functionality.
-      Whether you're running a social community or a themed server, MatchBot helps connect users in meaningful ways.
-    </p>
-  </div>
-  
-  <div class="content">
-    <h2>Contact</h2>
-    <p>If you have any questions or feedback, feel free to reach out on Discord: <a href="https://discordapp.com/users/thetradchad" class="discord-link">@thetradchad</a></p>
-    
-  </div>
-</Layout>
+</IntroDoc>
 
 <style>
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .logo {
-    width: 8rem;
-    height: 8rem;
-    margin-bottom: 1rem;
-  }
-
-  h1 {
-    font-family: 'Rubik', sans-serif;
-    font-size: 3rem;
-    font-weight: bolder;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 1.25rem;
-    margin-top: 0.25rem;
-  }
-
-  .content {
-    max-width: 40rem;
-    margin: 2rem auto;
-    text-align: left;
-  }
-
-  .content h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .content p {
-    font-size: 1.25rem;
-    line-height: 1.75;
-    margin-top: 1rem;
-  }
-
-  .contact {
-    background-color: #2e2e2e;
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    max-width: 40rem;
-    margin: 3rem auto;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
     text-align: center;
   }
-
-  .discord-link {
-    font-size: 1.25rem;
-    color: #7289da; /* Discord brand color */
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .discord-link:hover {
-    text-decoration: underline;
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
   }
 </style>

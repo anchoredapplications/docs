@@ -12,25 +12,30 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="A documentation site for various projects of Jeremiah Gage." />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/matchbot.svg" />
+		<link rel="icon" type="image/svg+xml" href="/docs.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Docs | {title}</title>
 	</head>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
 	<body>
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
-		background: linear-gradient(135deg, #121212, #1e1e1e);
-    	color: white;
-		padding-top: 80px;
-		padding-bottom: 80px;
+		background: linear-gradient(135deg, #000000, #3f3f3f); /* Dark gradient background */
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: linear-gradient(135deg, #121212, #1e1e1e);
     	color: white;
+	}
+	:root, html, body {
+		padding: 0;
+		margin: 0;
+	}
+	h1 {
+		font-family: Rubik;
 	}
 	code {
 		font-family:

@@ -1,0 +1,46 @@
+---
+import IntroDoc from '../layouts/IntroDoc.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import BadgeRow from '../components/BadgeRow.astro';
+---
+<IntroDoc
+  title="MatchBot" 
+  description="The matchmaking bot for Discord" 
+  image="./matchbot.svg"
+>
+  <BadgeRow slot="header">
+    <Badge heading="50k+" subheading="uses"/>
+    <Badge heading="1k+" subheading="users"/>
+    <Badge heading="2+" subheading="servers"/>
+  </BadgeRow>
+  <div slot="content">
+    <Card 
+      heading="Early Access" 
+      subheading="MatchBot is currently in early access, and is available only upon request. We're actively working to improve the bot and add new features. We appreciate your feedback and support as we continue to develop and enhance the experience."/>
+    <h2>About MatchBot</h2>
+    <p>
+      MatchBot is a Discord bot built using TypeScript and Discord.js, designed to bring the dating app experience to Discord servers.
+      It's fully dockerized for easy deployment and scaling.
+    </p>
+    <p>
+      The bot offers a variety of features including general member commands, event commands for server management, and its core matchmaking functionality.
+      Whether you're running a social community or a themed server, MatchBot helps connect users in meaningful ways.
+    </p>
+    <h2>Contact</h2>
+    <p>If you have any questions or feedback, feel free to reach out on Discord: <a href="https://discordapp.com/users/thetradchad" class="discord-link">@thetradchad</a></p>
+  </div>
+</IntroDoc>
+
+<style>
+  .discord-link {
+    font-size: 1.25rem;
+    color: #7289da; /* Discord brand color */
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .discord-link:hover {
+    text-decoration: underline;
+  }
+</style>
